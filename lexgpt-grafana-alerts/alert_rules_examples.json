@@ -1,0 +1,29 @@
+{
+  "title": "LexGPT Example Alerts",
+  "rules": [
+    {
+      "title": "P95 response time high",
+      "condition": "WHEN avg() OF query(A, 1m, now) IS ABOVE 2000",
+      "datasource": "influxdb-k6",
+      "query": "SELECT percentile(\"value\",95) FROM \"http_req_duration\" WHERE $timeFilter",
+      "for": "3m",
+      "notifications": [
+        "Slack - LexGPT Alerts",
+        "SMTP - LexGPT Alerts"
+      ],
+      "message": "P95 latency exceeded 2000ms for the last 3 minutes."
+    },
+    {
+      "title": "HTTP error rate high",
+      "condition": "WHEN avg() OF query(B, 1m, now) IS ABOVE 0.02",
+      "datasource": "influxdb-k6",
+      "query": "SELECT mean(\"value\") FROM \"http_req_failed\" WHERE $timeFilter",
+      "for": "3m",
+      "notifications": [
+        "Slack - LexGPT Alerts",
+        "SMTP - LexGPT Alerts"
+      ],
+      "message": "HTTP error rate exceeded 2% for the last 3 minutes."
+    }
+  ]
+}
