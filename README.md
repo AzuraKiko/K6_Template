@@ -31,8 +31,8 @@ k6-to-html report.json > report.html
 - [k6-to-html](https://github.com/MattiSG/k6-to-html) for HTML reports
 
 
-npm install -g k6-reporter
 k6 run --out json=output.json test-script.js
 k6-reporter output.json report.html
+
 k6 run --out json=report.json test-scenarios.js
 k6-to-html report.json > report.html

@@ -10,21 +10,21 @@ const errorRate = new Rate('errors');
 // Environment configs
 const ENV = __ENV.ENV || 'stg';
 const CONFIG = {
-  dev: {
-    baseUrl: 'https://user-dev.lexcentra.ai',
-    email: 'anhtu@novus-fintech.com',
-    password: 'Admin@123'
-  },
+  // dev: {
+  //   baseUrl: 'https://user-dev.lexcentra.ai',
+  //   email: 'anhtu@novus-fintech.com',
+  //   password: 'Admin@123'
+  // },
   stg: {
     baseUrl: 'https://user-stg.lexcentra.ai',
     email: 'anhtu@novus-fintech.com',
     password: 'Admin@123'
   },
-  prod: {
-    baseUrl: 'https://user.lexcentra.ai',
-    email: 'anhtu@novus-fintech.com',
-    password: 'Admin@123'
-  }
+  // prod: {
+  //   baseUrl: 'https://user.lexcentra.ai',
+  //   email: 'anhtu@novus-fintech.com',
+  //   password: 'Admin@123'
+  // }
 }[ENV];
 
 // Scenarios
