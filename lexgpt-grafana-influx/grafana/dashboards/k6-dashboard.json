@@ -2,10 +2,7 @@
   "id": null,
   "uid": "k6-simple",
   "title": "k6 Summary (LexGPT)",
-  "tags": [
-    "k6",
-    "lexgpt"
-  ],
+  "tags": ["k6", "lexgpt"],
   "timezone": "browser",
   "schemaVersion": 27,
   "version": 1,
@@ -17,10 +14,7 @@
       "targets": [
         {
           "refId": "A",
-          "datasource": {
-            "type": "influxdb",
-            "uid": ""
-          },
+          "datasource": "influxdb-k6",
           "query": "SELECT percentile(\"value\",95) FROM \"http_req_duration\" WHERE $timeFilter GROUP BY time($__interval) fill(null)"
         }
       ],
@@ -38,10 +32,7 @@
       "targets": [
         {
           "refId": "B",
-          "datasource": {
-            "type": "influxdb",
-            "uid": ""
-          },
+          "datasource": "influxdb-k6",
           "query": "SELECT mean(\"value\") FROM \"http_reqs\" WHERE $timeFilter GROUP BY time($__interval) fill(null)"
         }
       ],
@@ -59,10 +50,7 @@
       "targets": [
         {
           "refId": "C",
-          "datasource": {
-            "type": "influxdb",
-            "uid": ""
-          },
+          "datasource": "influxdb-k6",
           "query": "SELECT mean(\"value\") FROM \"http_req_failed\" WHERE $timeFilter GROUP BY time($__interval) fill(null)"
         }
       ],

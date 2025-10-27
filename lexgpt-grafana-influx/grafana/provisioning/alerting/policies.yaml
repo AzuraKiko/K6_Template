@@ -1,0 +1,10 @@
+apiVersion: 1
+policies:
+  - orgId: 1
+    receiver: "Slack - LexGPT Alerts"
+    routes:
+      - receiver: "SMTP - LexGPT Alerts"
+    group_by:
+      - grafana_folder
+      - alertname
+

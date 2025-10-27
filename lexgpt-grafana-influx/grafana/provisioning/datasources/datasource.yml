@@ -5,11 +5,10 @@ datasources:
     type: influxdb
     access: proxy
     url: http://influxdb:8086
-    basicAuth: false
     isDefault: true
     database: k6
     user: admin
-    password: admin123
     jsonData:
-      version: "1"
-    secureJsonData: {}
+      httpMode: GET
+    secureJsonData:
+      password: admin123
